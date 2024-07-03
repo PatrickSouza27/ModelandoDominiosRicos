@@ -1,0 +1,55 @@
+Linguagem Ubíqua
+é um conceito central de DDD. Ela consiste de um conjunto de termos que devem ser plenamente entendidos tanto por especialistas no domínio 
+(usuários do sistema) como por desenvolvedores (implementadores do sistema).(LINGUAGEM UNICA - VOCÊ E O CLIENTE)
+
+
+domínios anêmicos: 
+	Reflete oque está no banco, é ruim para teste, porém, é mais rápido
+	Não deixar a regra de negocio no banco
+
+domínios ricos: 
+	melhor para testar, melhor para banco NOSQL, que é melhor para velocidade de escritas, porém, a sua aplicação que tem que fazer as validações
+
+Subdomínios
+	Subdomínios são divisões menores dentro de um domínio maior, e são utilizados em diversas áreas para organizar e categorizar informação ou elementos de forma mais específica
+
+Separação em Contextos delimitados
+	patch size - tamanho da mudança
+
+
+
+organizar solução: 
+\Codes>mkdir PaymentContext
+\Codes>cd PaymentContext
+\Codes\PaymentContext>mkdir PaymentContext.Domain
+\Codes\PaymentContext>mkdir PaymentContext.Shared
+\Codes\PaymentContext>mkdir PaymentContext.Tests
+
+nas pastas criar
+\Codes\PaymentContext\PaymentContext.Domain>dotnet new classlib
+\Codes\PaymentContext\PaymentContext.Shared>dotnet new classlib
+
+na pasta de teste:
+\Codes\PaymentContext\PaymentContext.Tests>dotnet new mstest
+
+para vincular os projetos a solucação
+	dotnet sln add {{lib das pastas}}.csproj
+
+
+
+você precisa referenciar os Payments, então, no Domain, precisa ver oque tem em shared, e o tests, precisa ver oque tem dentro de domain e shared
+entre na pasta domain:-> dotnet add reference ../PaymentContext.Shared/PaymentContext.Shared.csproj
+
+
+
+dotnet build
+
+
+Definindo as entidades
+	
+
+
+obs: ctor -> cria construtor vazio
+ctorp -> cria um construtor com todos os atributos
+
+	
