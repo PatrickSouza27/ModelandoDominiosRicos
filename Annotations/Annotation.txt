@@ -46,10 +46,25 @@ dotnet build
 
 
 Definindo as entidades
-	
-
 
 obs: ctor -> cria construtor vazio
 ctorp -> cria um construtor com todos os atributos
+
+
+value object
+	para testar
+
+em vez de manter os atributos
+
+	firstName 
+	lastname
+
+vc deve criar um objeto Name, e colocar os atributos, pois isso ajuda para testar
+ai, vc cria methodos para isso, exemplo?
+	bool Valida()
+		=> firstName.Lengh > 13 && lastName.Lengh > 3
+
+
+
 
 	
